@@ -1,0 +1,58 @@
+-
+  image_data = [
+    {
+      src: "https://picsum.photos/200/250?random=1",
+      style: "--top: 120px; --left: 0"
+    },
+    {
+      src: "https://picsum.photos/200/220?random=2",
+      style: "--top: 0px; --left: 250px"
+    },
+    {
+      src: "https://picsum.photos/360/200?random=3",
+      style: "--top: 220px; --right: 0px",
+      right: true,
+    },
+    {
+      src: "https://picsum.photos/360/220?random=4",
+      style: "--top: 500px; --left: 120px",
+    },
+    {
+      src: "https://picsum.photos/200/300?random=5",
+      style: "--top: 600px; --right: 30px",
+      right: true,
+    },
+    {
+      src: "https://picsum.photos/200/280?random=6",
+      style: "--top: 820px; --left: 60px"
+    },
+    {
+      src: "https://picsum.photos/360/240?random=7",
+      style: "--top: 1100px; --right: 100px",
+      right: true,
+    },
+  ]
+
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet" href="wave.css")
+  body
+    .container
+      section.hero
+        h1.hero__title
+          |Parallax Image
+
+        each image in image_data
+          .parallax__image.js-parallax(style=image.style class=image.right ? "-right" : "")
+            img(src=image.src class="js-parallax-item" alt="")
+            .wave.js-wave
+
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js")
+    script(src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js")
+    script(src="wave.js")

@@ -46,26 +46,15 @@ class ParallaxScroll {
 
   setWave() {
     this.els.forEach(el => {
-      const svg = el.querySelector('.wavePath');
-
-      gsap.to(svg, {
-        attr: { d: this.waveD },
-        duration: 0.5,
-        ease: "power2.out",
-        overwrite: "auto"
-      });
+      const wave = el.querySelector('.js-wave');
+      wave.classList.add('is-moving');
     })
   }
 
   resetWave() {
     this.els.forEach(el => {
-      const svg = el.querySelector('.wavePath');
-      gsap.to(svg, {
-        attr: { d: this.flatD },
-        duration: 0.5,
-        ease: "power2.out",
-        overwrite: "auto"
-      });
+      const wave = el.querySelector('.js-wave');
+      wave.classList.remove('is-moving');
     })
   }
 
