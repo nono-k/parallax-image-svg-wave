@@ -12,18 +12,15 @@
       src: "https://picsum.photos/360/200?random=3",
       style: "--top: 220px; --right: 0px",
       right: true,
-      yPercent: -5,
     },
     {
       src: "https://picsum.photos/360/220?random=4",
       style: "--top: 500px; --left: 120px",
-      yPercent: -8,
     },
     {
       src: "https://picsum.photos/200/300?random=5",
       style: "--top: 600px; --right: 30px",
       right: true,
-      yPercent: -10,
     },
     {
       src: "https://picsum.photos/200/280?random=6",
@@ -33,7 +30,6 @@
       src: "https://picsum.photos/360/240?random=7",
       style: "--top: 1100px; --right: 100px",
       right: true,
-      yPercent: -10,
     },
   ]
 
@@ -51,13 +47,9 @@ html(lang="ja")
           |Parallax Image
 
         each image in image_data
-          .parallax__image.js-parallax(style=image.style class=image.right ? "-right" : "" data-ypercent=image.yPercent)
+          .parallax__image.js-parallax(style=image.style class=image.right ? "-right" : "")
             img(src=image.src class="js-parallax-item" alt="")
-            <svg class="separator separator--down" width="100%" height="100%"><path class="path-anim separator__path" d="M 79.7156 0 C 104.231 1.3955 126.153 3.9836 147.73 6.531 C 197.458 12.4017 245.357 18.0565 360 7 V 28 H 0 V 10.1055 C 16.397 5.7112 36.8899 1.0858 59.8978 0 H 79.7156 Z"></path></svg>
-
-        //- .image
-          img(src="https://picsum.photos/1200/800?random=1")
-          //- <svg class="separator separator--down" width="100%" height="100%" viewBox="0 0 100 10" preserveAspectRatio="none"> <path class="path-anim separator__path wavePath" d="M 24 0 C 33 0 32.2999 3.2855 49 3.2855 C 63.0143 3.2855 65 0.1 74 0 C 83 0 84.6284 3.2855 100 0 L 100 10 L 0 10 L 0 0 C 10.3429 2.2999 15 0.1 24 0 Z"></path> </svg>
+            <svg width="100%" height="100%"><path class="wavePath" d="M 79.7156 0 C 104.231 1.3955 126.153 3.9836 147.73 6.531 C 197.458 12.4017 245.357 18.0565 360 7 V 28 H 0 V 10.1055 C 16.397 5.7112 36.8899 1.0858 59.8978 0 H 79.7156 Z"></path></svg>
 
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js")
